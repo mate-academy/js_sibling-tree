@@ -1,6 +1,6 @@
 'use strict';
 
-const allLi = document.querySelector('.tree').querySelectorAll('li');
+const allLi = document.querySelector('.tree li');
 
 for (const li of allLi) {
   if (li.children.length !== 0) {
@@ -12,7 +12,7 @@ for (const li of allLi) {
     span.append(span.nextSibling); // move text inside in span
 
     span.addEventListener('click', function (e) {
-      e.target.nextSibling.hidden = !e.target.nextSibling.hidden;
+      e.target.nextElementSibling.hidden = !e.target.nextElementSibling.hidden;
       // we exchange meaning of properties 'hidden'
       // on true at false and otherwise
     });
