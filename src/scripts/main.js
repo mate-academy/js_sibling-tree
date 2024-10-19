@@ -19,7 +19,7 @@ tree.addEventListener('click', (e) => {
 
     if (subList) {
       subList.style.display =
-        subList.style.display === 'none' || '' ? 'block' : 'none';
+        subList.style.display === 'none' ? 'block' : 'none';
     }
   }
 });
