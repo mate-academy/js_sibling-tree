@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 document.querySelectorAll('.tree > li').forEach((item) => {
   const span = document.createElement('span');
 
