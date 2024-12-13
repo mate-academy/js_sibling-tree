@@ -6,11 +6,14 @@ const listItems = [...tree.querySelectorAll('li')];
 
 listItems.forEach((elem) => {
   const firstText = elem.firstChild;
-  const span = document.createElement('span');
 
-  span.textContent = `${firstText.textContent}`;
+  if (firstText.nodeType === 3) {
+    const span = document.createElement('span');
 
-  elem.replaceChild(span, firstText);
+    span.textContent = `${firstText.textContent}`;
+
+    elem.replaceChild(span, firstText);
+  }
 });
 
 // eslint-disable-next-line no-shadow
@@ -20,15 +23,17 @@ function clickOnSpan(event) {
   if (spanTarget) {
     const list = spanTarget.nextElementSibling;
 
-    const computedStyles = getComputedStyle(list);
+    if (list && list.tagName === 'UL') {
+      const computedStyles = getComputedStyle(list);
 
-    if (computedStyles.display === 'none') {
-      list.style.display = 'block';
+      if (computedStyles.display === 'none') {
+        list.style.display = 'block';
 
-      return;
+        return;
+      }
+
+      list.style.display = 'none';
     }
-
-    list.style.display = 'none';
   }
 }
 
