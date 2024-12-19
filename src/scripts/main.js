@@ -22,7 +22,11 @@ names.forEach((n) => {
     if (n.parentNode.querySelector('ul')) {
       const ul = n.parentNode.querySelector('ul');
 
-      ul.style.display = 'none';
+      if (ul.style.display !== 'none') {
+        ul.style.display = 'none';
+      } else {
+        ul.style.display = 'block';
+      }
     }
   });
 });
