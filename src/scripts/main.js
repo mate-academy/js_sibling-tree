@@ -1,23 +1,23 @@
 'use strict';
 
-const li = document.querySelectorAll('li');
+const li = document.querySelectorAll('.tree li');
 
 li.forEach((item) => {
-  const span = document.createElement('span');
+  if (item.firstChild && item.firstChild.nodeType === Node.TEXT_NODE) {
+    const span = document.createElement('span');
 
-  span.textContent = item.firstChild.textContent.trim();
-  item.firstChild.textContent = '';
-  item.prepend(span);
+    span.textContent = item.firstChild.textContent.trim();
+    item.firstChild.textContent = '';
+    item.prepend(span);
 
-  span.addEventListener('click', () => {
-    const childUl = item.querySelector('ul');
+    span.addEventListener('click', () => {
+      const childUl = item.querySelector('ul');
 
-    if (childUl) {
-      if (childUl.style.display === 'none') {
-        childUl.style.display = '';
-      } else {
-        childUl.style.display = 'none';
+      if (childUl) {
+        const displayValue = window.getComputedStyle(childUl).display;
+
+        childUl.style.display = displayValue === 'none' ? '' : 'none';
       }
-    }
-  });
+    });
+  }
 });
