@@ -22,11 +22,15 @@ function addSpanToFirstTextChild(list) {
 
   for (const li of liList) {
     if (!li.firstChild) {
-      return;
+      continue;
     }
 
     if (li.firstChild.tagName === 'UL') {
       addSpanToFirstTextChild(li.firstChild);
+    }
+
+    if (!li.firstChild.nodeType === 3) {
+      continue;
     }
 
     const span = document.createElement('span');
