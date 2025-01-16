@@ -19,7 +19,7 @@ const tree = document.querySelector('.tree');
 wrapTextWithSpan(tree);
 
 document.addEventListener('click', (e) => {
-  const hideBlock = e.target.nextSibling;
+  const hideBlock = e.target.nextElementSibling;
 
   if (hideBlock) {
     if (hideBlock.style.display === 'none') {
