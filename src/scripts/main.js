@@ -13,7 +13,7 @@ function modernizeElement(element) {
   const elementArray = [...element.children];
 
   if (elementArray.length !== 0) {
-    elementArray.map((item) => {
+    elementArray.forEach((item) => {
       const ul = item.querySelector('ul');
 
       if (ul) {
@@ -26,7 +26,7 @@ function modernizeElement(element) {
 }
 
 function toggleList(elements) {
-  elements.map((element) => {
+  elements.forEach((element) => {
     const ul = element.nextSibling;
 
     element.addEventListener('click', () => {
