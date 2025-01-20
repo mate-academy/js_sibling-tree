@@ -13,6 +13,11 @@ for (const title of list) {
 
 document.addEventListener('click', (e) => {
   const element = e.target.closest('span');
+
+  if (!element) {
+    return;
+  }
+
   const liElement = element.closest('li');
 
   if (liElement) {
