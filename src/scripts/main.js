@@ -1,25 +1,20 @@
 'use strict';
 
-const list = document.querySelectorAll('li');
+const tree = document.querySelector('.tree');
+const parentItems = tree.querySelectorAll('li:has(> ul)');
 
-function addSpanToList(listElement) {
-  listElement.forEach((li) => {
-    const span = document.createElement('span');
+parentItems.forEach((li) => {
+  const text = li.firstChild.textContent.trim();
+  const span = document.createElement('span');
 
-    span.textContent = li.firstChild.textContent;
+  span.textContent = text;
+  span.classList.add('list-title');
+  span.style.display = 'block';
 
-    if (span.textContent[0] === '\n') {
-      span.classList.add('title');
-      span.style.display = 'block';
-    }
+  li.replaceChild(span, li.firstChild);
+});
 
-    li.replaceChild(span, li.firstChild);
-  });
-}
-
-addSpanToList(list);
-
-const titleList = document.querySelectorAll('.title');
+const titleList = document.querySelectorAll('.list-title');
 
 titleList.forEach((item) => {
   item.addEventListener('click', () => {
