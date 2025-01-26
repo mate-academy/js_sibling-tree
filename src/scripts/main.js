@@ -1,6 +1,6 @@
 'use strict';
 
-const liItems = document.querySelectorAll('li > ul');
+const liItems = document.querySelectorAll('li:has(> ul)');
 
 liItems.forEach((el) => {
   const parentLi = el.parentElement;
