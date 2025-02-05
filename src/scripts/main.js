@@ -5,16 +5,16 @@ const tree = document.querySelector('.tree');
 createSpanForHeaders(tree);
 
 function createSpanForHeaders(list) {
-  const listsInTree = tree.querySelectorAll('ul');
+  const listsInTree = list.querySelectorAll('ul');
 
   for (const ul of listsInTree) {
-    const headerNode = ul.parentNode.firstChild;
-    const headerText = headerNode.textContent;
+    const replacedElement = ul.parentNode.firstChild;
+    const headerText = replacedElement.textContent;
 
     const span = document.createElement('span');
     span.innerText = headerText;
 
-    headerNode.replaceWith(span);
+    replacedElement.replaceWith(span);
   }
 }
 
