@@ -11,11 +11,9 @@ tree.addEventListener('click', (e) => {
 
   const ul = span.nextElementSibling;
 
-  if (ul.style.display !== 'none') {
-    ul.style.display = 'none';
-
+  if (!ul || ul.tagName !== 'UL') {
     return;
   }
 
-  ul.style.display = 'block';
+  ul.style.display = ul.style.display === 'none' ? 'block' : 'none';
 });
