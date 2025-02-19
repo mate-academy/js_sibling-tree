@@ -3,12 +3,12 @@
 const ulElement = document.querySelector('.tree');
 
 ulElement.addEventListener('click', (e) => {
-  const sublingItem = e.target.nextElementSibling;
+  const siblingItem = e.target.nextElementSibling;
 
-  if (!sublingItem) {
+  if (!siblingItem) {
     return;
   }
 
-  sublingItem.style.display =
-    sublingItem.style.display === 'none' ? 'block' : 'none';
+  siblingItem.style.display =
+    siblingItem.style.display === 'none' ? 'block' : 'none';
 });
