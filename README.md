@@ -1,22 +1,30 @@
-1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_sliding-tree-DOM/)
-2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
-    - Run `npm run test` command to test your code;
-    - Run `npm run test:only -- -n` to run fast test ignoring linter;
-    - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
+# Sliding Tree
 
-### Task: Sliding tree
+## 🎮 About the Project
+This project implements an expandable tree structure where users can toggle nested items dynamically. The tree expands and collapses smoothly, providing an interactive user experience.
 
-Create an expandable tree.
+## 🚀 Tech Stack
+- **HTML** (BEM methodology for structured markup)
+- **CSS** (For styling and animations)
+- **JavaScript** (Handles tree expansion and collapse logic)
 
-Requirements: 
-- Clicking on the headline should hide or show elements.
-- Clicking outside the title text (in an empty place) should do nothing.
+## 🛠️ Tools & Dependencies
+- **ESLint** – Ensuring code quality  
+- **Prettier** – Code formatting for readability  
+- **Cypress** – End-to-end testing  
+- **Mochawesome** – Test reporting  
+- **Parcel** – Web application bundler  
 
-Hint: you need to wrap each header text into `span` tag.
+## 📌 Features
+✅ Expandable and collapsible tree structure  
+✅ Smooth sliding animation for better UX  
+✅ Handles nested items dynamically  
 
-Do not change HTML or CSS in this task.
+## 🌐 Demo
+🔗 [Live Demo](https://AndriiZakharenko.github.io/sliding-tree/)
 
-### Screenshot of the tree
-![screenshot](src/images/sliding_tree.png)
-![screenshot](src/images/sliding_tree2.png)
+## 📸 Reference Image  
+<img src="src/images/sliding_tree.png" alt="reference image" width="300px" />
+
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/js_sliding-tree-DOM)
